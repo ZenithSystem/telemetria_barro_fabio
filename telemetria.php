@@ -12,6 +12,8 @@
     $tempo_medio = 0;
     $ping_massimo = 0;
 
+    $ping_unici = [];
+
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +68,8 @@
             <?php $ping_massimo = $ping ?>
         <?php endif; ?>
     <?php endforeach; ?>
+
+
 
     <h2> somma dei ping </h2>
     <p> <?php echo($somma_ping); ?></p>
