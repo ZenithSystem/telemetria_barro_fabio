@@ -9,6 +9,9 @@
 
     $somma_ping = 0;
 
+    $tempo_medio = 0;
+    $ping_massimo = 0;
+
 ?>
 
 <!DOCTYPE html>
@@ -50,15 +53,31 @@
         <?php endforeach; ?>
     </ul>
 
+
     <?php foreach($ping_validi as $ping): ?>
         <?php $somma_ping += $ping; ?>
     <?php endforeach; ?>
 
-    <?php $media_ping = round($somma_ping / count($ping_validi), 2); ?>
 
-    <p>Somma: <?php echo($somma_ping); ?></p>
-    <p>Media: <?php echo($media_ping); ?></p>
+    <?php $tempo_medio = round($somma_ping / count($ping_validi), 2); ?>
 
-    
+    <?php foreach($ping_validi as $ping): ?>
+        <?php if($ping > $ping_massimo): ?>
+            <?php $ping_massimo = $ping ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
+
+    <h2> somma dei ping </h2>
+    <p> <?php echo($somma_ping); ?></p>
+
+    <h2> tempo medio di esecuzione </h2>
+    <p> <?php echo($tempo_medio); ?> </p>
+
+    <h2> ping massimo </h2>
+    <p> <?php echo($ping_massimo); ?> </p>
+
+
+
+
 </body>
 </html>
