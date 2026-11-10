@@ -15,6 +15,16 @@
 <body>
 
     <h1> esercizio telemetria </h1>
+
+    <ul>
+    
+        <?php foreach($ping_grezzi as $ping): ?>
+            <li>
+                <?php echo($ping) ?>
+            </li>
+        <?php endforeach; ?>
+        
+    </ul>
     
 </body>
 </html>
