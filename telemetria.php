@@ -2,6 +2,8 @@
 
 <?php 
 
+    //Esercizio telemetria Barro Fabio 5BT-i 
+
     $ping_grezzi = [45, 120, -1, 32, 210, 85, -1, 18, 95, 310, 45, 60, -1, 150, 28, 240, 18, 72];
 
     $ping_validi = [];
@@ -27,63 +29,82 @@
 
     <h1> esercizio telemetria </h1>
 
-    <ul>
-        <?php foreach($ping_grezzi as $ping): ?>
-            <li>
-                <?php echo($ping); ?>
-            </li>
-        <?php endforeach; ?>        
-    </ul>
+    <table border="1">
+        <tr>
+            <th> Ping Grezzi Initiali </th>
+            <td>
+                <ul>
+                    <?php foreach($ping_grezzi as $ping): ?>
+                        <li>
+                            <?php echo($ping); ?>
+                        </li>
+                    <?php endforeach; ?>        
+                </ul>
+            </td>
+        </tr>
 
-    <?php array_push($ping_grezzi, 55, 190, 12); ?>
+        <?php array_push($ping_grezzi, 55, 190, 12); ?>
 
-    <ul>
-        <?php foreach($ping_grezzi as $ping): ?>
-            <li>
-                <?php echo($ping); ?>
-            </li>
-        <?php endforeach; ?>        
-    </ul>
+        <tr>
+            <th> Ping Grezzi Aggiornati </th>
+            <td>
+                <ul>
+                    <?php foreach($ping_grezzi as $ping): ?>
+                        <li>
+                            <?php echo($ping); ?>
+                        </li>
+                    <?php endforeach; ?>        
+                </ul>
+            </td>
+        </tr>
+    </table>
 
-    <ul>
-        <?php foreach($ping_grezzi as $ping): ?>
-            <?php if($ping == -1): ?>
-                <?php $pacchetti_persi++; ?>
+    <?php foreach($ping_grezzi as $ping): ?>
+
+        <?php if($ping == -1): ?>
+           
+            <?php $pacchetti_persi++; ?>
+        
             <?php elseif($ping > 0): ?>
-                <?php $ping_validi[] = $ping; ?>
-            <?php endif; ?>
-        <?php endforeach; ?>
-    </ul>
-
-
-    <?php foreach($ping_validi as $ping): ?>
-        <?php $somma_ping += $ping; ?>
+            
+            <?php $ping_validi[] = $ping; ?>
+        
+        <?php endif; ?>
+    
     <?php endforeach; ?>
 
+    <?php foreach($ping_validi as $ping): ?>
+        
+        <?php $somma_ping += $ping; ?>
+    
+    <?php endforeach; ?>
 
     <?php $tempo_medio = round($somma_ping / count($ping_validi), 2); ?>
 
     <?php foreach($ping_validi as $ping): ?>
+        
         <?php if($ping > $ping_massimo): ?>
-            <?php $ping_massimo = $ping ?>
+            
+            <?php $ping_massimo = $ping; ?>
+        
         <?php endif; ?>
+    
     <?php endforeach; ?>
 
-    
-
-
-
-    <h2> somma dei ping </h2>
-    <p> <?php echo($somma_ping); ?></p>
-
-    <h2> tempo medio di esecuzione </h2>
-    <p> <?php echo($tempo_medio); ?> </p>
-
-    <h2> ping massimo </h2>
-    <p> <?php echo($ping_massimo); ?> </p>
-
-
-
+    <table border="1">
+        <tr>
+            <th> Somma dei ping </th>
+            <td> <?php echo($somma_ping); ?> </td>
+        </tr>
+        <tr>
+            <th> Tempo medio di esecuzione </th>
+            <td> <?php echo($tempo_medio); ?> </td>
+        </tr>
+        <tr>
+            <th> Ping massimo</th>
+            <td> <?php echo($ping_massimo); ?> </td>
+        </tr>
+    </table>
 
 </body>
 </html>
