@@ -69,6 +69,8 @@
         <?php endif; ?>
     <?php endforeach; ?>
 
+    
+
 
 
     <h2> somma dei ping </h2>
