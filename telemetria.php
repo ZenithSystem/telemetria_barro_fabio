@@ -17,14 +17,23 @@
     <h1> esercizio telemetria </h1>
 
     <ul>
-    
         <?php foreach($ping_grezzi as $ping): ?>
             <li>
                 <?php echo($ping) ?>
             </li>
-        <?php endforeach; ?>
-        
+        <?php endforeach; ?>        
     </ul>
+
+    <?php array_push($ping_grezzi, 55, 190, 12)?>
+
+    <ul>
+        <?php foreach($ping_grezzi as $ping): ?>
+            <li>
+                <?php echo($ping) ?>
+            </li>
+        <?php endforeach; ?>        
+    </ul>
+
     
 </body>
 </html>
