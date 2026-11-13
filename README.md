@@ -1,5 +1,14 @@
 
 
-//Barro Fabio 5BT-i esercizio telemetria
 
-Link della repository github: https://github.com/ZenithSystem/telemetria_barro_fabio/commits/master/
+# Telemetria - PHP
+## Classe 5BT-i
+## Barro Fabio 
+
+Questa repo contiene uno scriprt php per analizzare i ping di un server durante un'ora fi traffico intenso.
+Il linguaggio utilizzato e' il PHP e i dati sono visualizzati in HTML.
+
+
+##File presenti
+telemetria.php
+
